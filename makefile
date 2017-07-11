@@ -99,7 +99,7 @@ clean:
 	$(CD) $(GAME_PATH) && $(MAKE) clean
 	$(RM) $(EXEC)
 
-.PHONY: debug clean release again init commit pull doc
+.PHONY: debug clean release again init commit pull doc reset status
 #regra pra debug
 print-% : ; @echo $* = $($*)
 
@@ -129,6 +129,7 @@ help:
 init:
 	git clone https://github.com/Anders1232/RattletrapEngine.git
 	git clone https://github.com/Anders1232/ProjetoDefenseGame.git
+	@echo CUIDADO os resitórios estão na branch master
 
 commit:
 	-$(CD) $(ENGINE_PATH) && git commit
@@ -141,4 +142,15 @@ pull:
 doc:
 	-$(CD) $(ENGINE_PATH) && doxygen Doxyfile
 	-$(CD) $(GAME_PATH) && doxygen Doxyfile
+
+reset:
+	-$(RMDIR) $(ENGINE_PATH)
+	-$(RMDIR) $(GAME_PATH)
+	git clone https://github.com/Anders1232/RattletrapEngine.git
+	git clone https://github.com/Anders1232/ProjetoDefenseGame.git
+	@echo CUIDADO os resitórios estão na branch master
+
+status:
+	-$(CD) $(ENGINE_PATH) && git status
+	-$(CD) $(GAME_PATH) && git status
 
