@@ -21,8 +21,8 @@ LIBS = -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf -lm
  FLAGS= -std=c++11 -Wall -pedantic -Wextra -fmax-errors=5 -Wno-unused-parameter -Werror=init-self
 DFLAGS = -ggdb -O0
 
-GAME_PATH= Game
-ENGINE_PATH= Engine
+GAME_PATH= ProjetoDefenseGame
+ENGINE_PATH= RattletrapEngine
 
 GAME_INC_PATH = -I$(GAME_PATH)/include
 GAME_SRC_PATH = $(GAME_PATH)/src
@@ -99,7 +99,7 @@ clean:
 	$(CD) $(GAME_PATH) && $(MAKE) clean
 	$(RM) $(EXEC)
 
-.PHONY: debug clean release again init
+.PHONY: debug clean release again init commit pull doc
 #regra pra debug
 print-% : ; @echo $* = $($*)
 
@@ -130,5 +130,15 @@ init:
 	git clone https://github.com/Anders1232/RattletrapEngine.git
 	git clone https://github.com/Anders1232/ProjetoDefenseGame.git
 
+commit:
+	-$(CD) $(ENGINE_PATH) && git commit
+	-$(CD) $(GAME_PATH) && git commit
 
+pull:
+	-$(CD) $(ENGINE_PATH) && git pull
+	-$(CD) $(GAME_PATH) && git pull
+
+doc:
+	-$(CD) $(ENGINE_PATH) && doxygen Doxyfile
+	-$(CD) $(GAME_PATH) && doxygen Doxyfile
 
