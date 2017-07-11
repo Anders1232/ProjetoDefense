@@ -21,6 +21,9 @@ LIBS = -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf -lm
  FLAGS= -std=c++11 -Wall -pedantic -Wextra -fmax-errors=5 -Wno-unused-parameter -Werror=init-self
 DFLAGS = -ggdb -O0
 
+GAME_REPO= https://github.com/Anders1232/ProjetoDefenseGame.git
+ENGINE_REPO= https://github.com/Anders1232/RattletrapEngine.git
+
 GAME_PATH= ProjetoDefenseGame
 ENGINE_PATH= RattletrapEngine
 
@@ -127,8 +130,8 @@ help:
 	@echo.
 
 init:
-	git clone https://github.com/Anders1232/RattletrapEngine.git
-	git clone https://github.com/Anders1232/ProjetoDefenseGame.git
+	git clone $(ENGINE_REPO)
+	git clone $(GAME_REPO)
 	@echo CUIDADO os resitórios estão na branch master
 
 commit:
@@ -146,8 +149,8 @@ doc:
 reset:
 	-$(RMDIR) $(ENGINE_PATH)
 	-$(RMDIR) $(GAME_PATH)
-	git clone https://github.com/Anders1232/RattletrapEngine.git
-	git clone https://github.com/Anders1232/ProjetoDefenseGame.git
+	git clone $(ENGINE_REPO)
+	git clone $(GAME_REPO)
 	@echo CUIDADO os resitórios estão na branch master
 
 status:
