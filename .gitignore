@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+#Pastas dos outros projetos:
+ProjetoDefenseGame/
+RattletrapEngine/
