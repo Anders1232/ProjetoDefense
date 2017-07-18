@@ -1,3 +1,13 @@
+ProjetoDefenseGame/include/Ally.h
+ProjetoDefenseGame/include/Bar.h
+ProjetoDefenseGame/include/Robo.h
+ProjetoDefenseGame/include/StageState.h
+ProjetoDefenseGame/include/TileMap.h
+ProjetoDefenseGame/src/Ally.cpp
+ProjetoDefenseGame/src/Bar.cpp
+ProjetoDefenseGame/src/Robo.cpp
+ProjetoDefenseGame/src/StageState.cpp
+ProjetoDefenseGame/src/TileMap.cpp
 RattletrapEngine/include/ActionManager.h
 RattletrapEngine/include/Animation.h
 RattletrapEngine/include/AStarHeuristic.h
